@@ -1,0 +1,32 @@
+.c-breadcrumbs {
+	margin-bottom: 50px;
+	color: $color-tertiary;
+}
+
+.c-breadcrumbs__item + .c-breadcrumbs__item:before {
+	content: '-';
+}
+
+.c-breadcrumbs__item {
+	display: inline;
+	word-break: break-all;
+}
+
+.c-breadcrumbs__link {
+	text-decoration: none;
+	color: inherit;
+	transition: text-shadow .2s ease;
+
+	&:hover, &:focus {
+		text-shadow: 1px 0 0 currentColor;
+
+	}
+
+}
+
+.breadcrumbs__item:last-child {
+	.breadcrumbs__link {
+		pointer-events: none;
+		cursor: default;
+	}
+}

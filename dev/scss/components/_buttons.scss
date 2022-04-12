@@ -1,0 +1,71 @@
+.c-btn {
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	border-radius: 25px;
+	max-width: 100%;
+	width: 100%;
+	border: 0;
+	outline: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	transition: text-shadow .2s ease, box-shadow .2s ease;
+}
+
+.btn_disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.c-btn_default {
+	color: #FFFFFF;
+	fill: #FFFFFF;
+	//stroke: #FFFFFF;
+	background-color: $color-primary;
+}
+
+.c-btn_secondary {
+	color: #333333;
+	fill: #333333;
+	//stroke: #333333;
+	background-color: #FED308;
+}
+
+.c-btn_md {
+	min-height: 40px;
+	line-height: 40px;
+	//padding: 0 32px;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.c-btn_lg {
+	min-height: 50px;
+	line-height: 50px;
+	//padding: 0 46px;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.c-btn_square {
+	border-radius: 0;
+}
+
+
+.c-btn_cart {
+	line-height: normal;
+
+	&:before {
+		content: url('images/cart.png');
+		margin-right: 10px;
+	}
+}
+
+.c-btn__icon {
+	margin-right: 10px;
+}

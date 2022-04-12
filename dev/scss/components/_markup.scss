@@ -1,0 +1,43 @@
+.discount-price-markup {
+	display: inline-flex;
+	align-items: baseline;
+	margin-top: -5px;
+	margin-bottom: -5px;
+
+	.discount-price-markup__item {
+		padding-top: 5px;
+		padding-bottom: 5px
+	}
+}
+
+.product-controls-markup {
+	display: flex;
+	margin-left: -5px;
+	margin-right: -5px;
+
+	.product-controls-markup__item {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+
+.product-markup {
+	margin-top: -10px;
+	margin-bottom: -10px;
+
+	.product-markup__item {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
+.category-markup {
+	margin-top: -10px;
+	margin-bottom: -10px;
+
+	.category-markup__item {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
