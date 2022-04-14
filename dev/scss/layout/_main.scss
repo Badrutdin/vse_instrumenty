@@ -100,7 +100,7 @@ body {
 	}
 }
 
-.c-main-banner{
+.c-main-banner {
 	height: 100%;
 	max-height: 870px;
 	background-size: cover;
@@ -110,12 +110,12 @@ body {
 	position: relative;
 }
 
-.с-main-banner__content{
+.с-main-banner__content {
 	padding-top: 116px;
 	padding-left: 70px;
 }
 
-.c-main-banner__title{
+.c-main-banner__title {
 	color: #333333;
 	font-weight: 600;
 	font-size: 40px;
@@ -125,24 +125,25 @@ body {
 	margin-bottom: 60px;
 }
 
-.c-main-banner__btn{
+.c-main-banner__btn {
 	max-width: 100%;
 	width: 212px;
 
 }
 
-.c-section{
-	margin:-35px 0;
-	.c-section__item{
-		padding:35px 0;
+.c-section {
+	margin: -35px 0;
+
+	.c-section__item {
+		padding: 35px 0;
 	}
 }
 
-.c-block{
+.c-block {
 
 }
 
-.c-block__title{
+.c-block__title {
 	margin-bottom: 20px;
 	font-weight: 600;
 	font-size: 30px;
@@ -150,22 +151,36 @@ body {
 	color: #333333;
 }
 
-.c-block__content{
+.c-block_lg {
+	.c-block__title {
+		margin-bottom: 40px;
+	}
+}
+
+.c-block_lg_center {
+	.c-block__title {
+		text-align: center;
+	}
+}
+
+.c-block__content {
 
 }
 
-.c-advantage{
+.c-advantage {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-.c-advantage-wrap{
+
+.c-advantage-wrap {
 	background-color: #FFFFFF;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
-.c-advantage__img{
+
+.c-advantage__img {
 	width: 50px;
 	height: 50px;
 	margin-bottom: 22px;
@@ -173,7 +188,8 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 }
-.c-advantage__title{
+
+.c-advantage__title {
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 20px;
