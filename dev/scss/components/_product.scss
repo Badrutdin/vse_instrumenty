@@ -64,3 +64,48 @@
 .c-product__price{
 	margin-bottom: 14px;
 }
+
+.c-product_detail{
+	padding: 30px 50px;
+	.c-product__wrap{
+		position: relative;
+	}
+	.c-product__preview{
+		width: 400px;
+		border: 1px solid rgba(0, 0, 0, 0.12);
+		border-radius: 20px;
+		height: 282px;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+
+	.c-product__name{
+		font-size: 20px;
+		line-height: 26px;
+		margin-bottom: 10px;
+	}
+
+	.c-product__desc{
+		font-size: 26px;
+		line-height: 33px;
+		margin-bottom: 10px;
+	}
+
+	.c-product__properties{
+		font-size: 16px;
+		line-height: 20px;
+		margin-bottom: 32px;
+	}
+
+	.c-product__discount-label{
+		top: 10px;
+		left: 10px;
+	}
+
+	.c-product__price{
+		margin-bottom: 32px;
+	}
+	.c-product__controls{
+		max-width: 330px;
+	}
+}

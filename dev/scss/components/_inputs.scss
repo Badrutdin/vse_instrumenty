@@ -14,6 +14,8 @@ input {
 	color: #333333;
 	fill: #333333;
 	stroke: #333333;
+	border: 1px solid #A7A4A4;
+
 }
 
 .c-counter__btn {
@@ -32,9 +34,13 @@ input {
 .c-counter_sm {
 	min-height: 40px;
 	line-height: 40px;
-	border: 1px solid #A7A4A4;
 	border-radius: 20px;
 
+}
+.c-counter_lg {
+	min-height: 50px;
+	line-height: 50px;
+	border-radius: 24px;
 }
 
 .c-counter__input {
@@ -50,6 +56,7 @@ input {
 
 .c-input {
 	max-width: 100%;
+	width: 100%;
 }
 
 .c-input_default {
@@ -99,3 +106,5 @@ input {
 	padding-left: 20px;
 	padding-right: 44px;
 }
+
+
