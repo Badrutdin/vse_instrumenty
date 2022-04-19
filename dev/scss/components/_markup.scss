@@ -20,6 +20,17 @@
 	padding-right: 5px;
 	max-width: 100%;
 }
+.card-radio-markup {
+	display: flex;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.card-radio-markup__item {
+	padding-left: 10px;
+	padding-right: 10px;
+	max-width: 100%;
+}
 
 .product-controls-markup_lg{
 	margin-left: -30px;
@@ -41,6 +52,15 @@
 .product-markup__item {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	max-width: 100%;
+}
+
+.form-markup {
+	margin: -10px;
+}
+
+.form-markup__item {
+	padding: 10px;
 	max-width: 100%;
 }
 

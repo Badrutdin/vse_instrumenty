@@ -24,44 +24,67 @@ $(document).ready(function () {
   $.each($('.filter'), function () {
     filter($(this))
   })
+  function ajaxRender({$parent, targetAttribute, containerClass, activeClass, url, data}) {
+    const storage = {}
+    const $items = $parent.find('[' + targetAttribute + ']')
+    const $textContainer = $parent.find(containerClass)
+    const active = activeClass
+    $items.on('click', function () {
+      const $item = $(this)
+      let text;
+      let key = $item.attr(targetAttribute);
+      console.log(key)
+      $.each($items, function (k, v) {
+        $(v).removeClass(active,200)
+      })
+      $item.addClass(active,200)
+      if (!storage[key]) {
+        $.ajax({
+          url: url,
+          data: data,
+          success: function (response) {
+            text = response[key]['text'];
+            storage[key] = text
+            $textContainer.text(storage[key])
+          }
+        })
+      } else {
+        $textContainer.text(storage[key])
+      }
+    })
+    $parent.find('.' + active).trigger('click')
+  }
+  ajaxRender({
+    $parent: $('.c-product-review'),
+    targetAttribute: 'data-text',
+    containerClass: 'c-product-review__text',
+    activeClass: 'c-product-review__item_active',
+    url: 'ajax/product-review.json',
+    data: {articul: 1234456734}
+  })
+
 })
 
-function ajaxRender({$parent, targetAttribute, containerClass, activeClass, url, data}) {
-  const storage = {}
-  const $items = $parent.find('[' + targetAttribute + ']')
-  const $textContainer = $parent.find(containerClass)
+function radioHandler({$parent, targetAttribute, containerClass, activeClass}) {
+  const $items = $parent.find('input[' + targetAttribute + ']')
+  const $labels = $items.closest('label')
   const active = activeClass
-  $items.on('click', function () {
-    const $item = $(this)
-    let text;
-    let key = $item.attr(targetAttribute);
-    $.each($items, function (k, v) {
+  $labels.on('click', function () {
+    const $label = $(this)
+    let key = $label.find('input[' + targetAttribute + ']').attr(targetAttribute);
+    console.log(key);
+    $.each($labels, function (k, v) {
       $(v).removeClass(active,200)
     })
-    $item.addClass(active,200)
-    if (!storage[key]) {
-      $.ajax({
-        url: url,
-        data: data,
-        success: function (response) {
-          text = response[key]['text'];
-          storage[key] = text
-          $textContainer.text(storage[key])
-        }
-      })
-    } else {
-      $textContainer.text(storage[key])
-    }
+    $label.addClass(active,200)
   })
   $parent.find('.' + active).trigger('click')
 }
 
-ajaxRender({
-  $parent: $('.c-product-review'),
-  targetAttribute: 'data-text',
-  containerClass: '.c-product-review__text',
-  activeClass: 'c-product-review__item_active',
-  url: 'ajax/product-review.json',
-  data: {articul: 1234456734}
+radioHandler({
+  $parent: $('.c-order-form'),
+  targetAttribute: 'data-radio',
+  containerClass: 'some-class',
+  activeClass: 'c-order-radio_active'
 })
 

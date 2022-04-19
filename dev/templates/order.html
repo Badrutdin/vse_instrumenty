@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		  name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<link href="styles.css" rel="stylesheet">
+	<link href="template_styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="c-breadcrumbs">
+		<ul class="c-breadcrumbs__list">
+			<li class="c-breadcrumbs__item">
+				<a class="c-breadcrumbs__link" href="#">
+					<span class="c-breadcrumbs__title">Главная</span>
+				</a>
+			</li>
+			<li class="c-breadcrumbs__item">
+				<a class="c-breadcrumbs__link" href="#">
+					<span class="c-breadcrumbs__title">Корзина</span>
+				</a>
+			</li>
+			<li class="c-breadcrumbs__item">
+				<span class="c-breadcrumbs__title">Оформление заказа</span>
+			</li>
+		</ul>
+	</div>
+	<div class="c-content">
+		<div class="c-order-form">
+			<div class="c-order-form__main-title">
+				Оформление заказа
+			</div>
+			<div class="row">
+				<div class="col-8">
+					<form action="#" method="POST">
+						<div class="c-order-form__section">
+							<div class="c-order-form__title">Получатель</div>
+							<div class="row form-markup">
+								<div class="col-6 form-markup__item">
+									<input class="c-order-form__input c-input c-input_sm c-input_default"
+										   id="order-form_first-name" name="first-name" type="text">
+								</div>
+								<div class="col-6 form-markup__item">
+									<input class="c-order-form__input c-input c-input_sm c-input_default"
+										   id="order-form_second-name" name="second-name" type="text">
+								</div>
+								<div class="col-6 form-markup__item">
+									<input class="c-order-form__input c-input c-input_sm c-input_default"
+										   id="order-form_email" name="email" type="text">
+								</div>
+								<div class="col-6 form-markup__item">
+									<input class="c-order-form__input c-input c-input_sm c-input_default"
+										   id="order-form_phone" name="phone" type="text">
+								</div>
+							</div>
+						</div>
+						<div class="c-order-form__section">
+							<div class="c-order-form__title">Выберите способ получения</div>
+							<fieldset id="delivery-method" class="card-radio-markup">
+								<div class="c-order-form__radio card-radio-markup__item">
+									<label class="c-order-radio c-order-radio_active" for="order-form_pickup">
+										<span class="c-order-radio__name">Пункт выдачи</span>
+										<span class="c-order-radio__desc">С 16 декабря, от 99 ₽</span>
+										<input class="visually-hidden" id="order-form_pickup" name="delivery-method"
+											   type="radio"
+											   data-radio="order-form_pickup"
+											   value="pickup">
+									</label>
+								</div>
+								<div class="c-order-form__radio card-radio-markup__item">
+									<label class="c-order-radio" for="order-form_courier">
+										<span class="c-order-radio__name">Доставка курьером</span>
+										<span class="c-order-radio__desc">С 15 декабря, от 199 ₽</span>
+										<input class="visually-hidden" id="order-form_courier" name="delivery-method"
+											   type="radio"
+											   data-radio="order-form_courier"
+											   value="courier">
+									</label>
+								</div>
+							</fieldset>
+							<div class="some-class" data-radio="order-form_pickup">1</div>
+							<div class="some-class" data-radio="order-form_courier">2</div>
+							<button class="c-order-form__submit c-btn c-btn_default c-btn_lg" type="submit">Оформить
+								заказ
+							</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
