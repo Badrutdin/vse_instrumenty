@@ -36,52 +36,96 @@
 				<div class="col-8">
 					<form action="#" method="POST">
 						<div class="c-order-form__section">
-							<div class="c-order-form__title">Получатель</div>
-							<div class="row form-markup">
-								<div class="col-6 form-markup__item">
-									<input class="c-order-form__input c-input c-input_sm c-input_default"
-										   id="order-form_first-name" name="first-name" type="text">
+							<div class="c-dropdown" data-is-open="closed">
+								<div class="c-order-form__title c-dropdown__title">Получатель
+									<svg class="c-dropdown__icon" height="10" viewBox="0 0 122.88 66.91"
+										 width="10" x="0px" xml:space="preserve"
+										 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+										 y="0px">
+										<g><path d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"/></g>
+									</svg>
 								</div>
-								<div class="col-6 form-markup__item">
-									<input class="c-order-form__input c-input c-input_sm c-input_default"
-										   id="order-form_second-name" name="second-name" type="text">
-								</div>
-								<div class="col-6 form-markup__item">
-									<input class="c-order-form__input c-input c-input_sm c-input_default"
-										   id="order-form_email" name="email" type="text">
-								</div>
-								<div class="col-6 form-markup__item">
-									<input class="c-order-form__input c-input c-input_sm c-input_default"
-										   id="order-form_phone" name="phone" type="text">
+								<div class="row form-markup">
+									<div class="col-6 form-markup__item">
+										<input class="c-order-form__input c-input c-input_sm c-input_default"
+											   id="order-form_first-name" name="first-name" type="text">
+									</div>
+									<div class="col-6 form-markup__item">
+										<input class="c-order-form__input c-input c-input_sm c-input_default"
+											   id="order-form_second-name" name="second-name" type="text">
+									</div>
+									<div class="col-6 form-markup__item">
+										<input class="c-order-form__input c-input c-input_sm c-input_default"
+											   id="order-form_email" name="email" type="text">
+									</div>
+									<div class="col-6 form-markup__item">
+										<input class="c-order-form__input c-input c-input_sm c-input_default"
+											   id="order-form_phone" name="phone" type="text">
+									</div>
 								</div>
 							</div>
 						</div>
 						<div class="c-order-form__section">
-							<div class="c-order-form__title">Выберите способ получения</div>
-							<fieldset id="delivery-method" class="card-radio-markup">
-								<div class="c-order-form__radio card-radio-markup__item">
-									<label class="c-order-radio c-order-radio_active" for="order-form_pickup">
-										<span class="c-order-radio__name">Пункт выдачи</span>
-										<span class="c-order-radio__desc">С 16 декабря, от 99 ₽</span>
-										<input class="visually-hidden" id="order-form_pickup" name="delivery-method"
-											   type="radio"
-											   data-radio="order-form_pickup"
-											   value="pickup">
-									</label>
+							<div class="c-dropdown" data-is-open="closed">
+								<div class="c-order-form__title c-dropdown__title">Выберите способ получения
+									<svg class="c-dropdown__icon" height="10" viewBox="0 0 122.88 66.91"
+										 width="10" x="0px" xml:space="preserve"
+										 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+										 y="0px">
+										<g><path d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"/></g>
+									</svg>
 								</div>
-								<div class="c-order-form__radio card-radio-markup__item">
-									<label class="c-order-radio" for="order-form_courier">
-										<span class="c-order-radio__name">Доставка курьером</span>
-										<span class="c-order-radio__desc">С 15 декабря, от 199 ₽</span>
-										<input class="visually-hidden" id="order-form_courier" name="delivery-method"
-											   type="radio"
-											   data-radio="order-form_courier"
-											   value="courier">
-									</label>
+								<div class="form-markup">
+									<fieldset class="card-radio-markup form-markup__item" id="delivery-method">
+										<div class="c-order-form__radio card-radio-markup__item">
+											<label class="c-order-radio c-order-radio_active" for="order-form_pickup">
+												<span class="c-order-radio__name">Пункт выдачи</span>
+												<span class="c-order-radio__desc">С 16 декабря, от 99 ₽</span>
+												<input class="visually-hidden" data-radio="order-form_pickup"
+													   id="order-form_pickup"
+													   name="delivery-method"
+													   type="radio"
+													   value="pickup">
+											</label>
+										</div>
+										<div class="c-order-form__radio card-radio-markup__item">
+											<label class="c-order-radio" for="order-form_courier">
+												<span class="c-order-radio__name">Доставка курьером</span>
+												<span class="c-order-radio__desc">С 15 декабря, от 199 ₽</span>
+												<input class="visually-hidden" data-radio="order-form_courier"
+													   id="order-form_courier"
+													   name="delivery-method"
+													   type="radio"
+													   value="courier">
+											</label>
+										</div>
+									</fieldset>
+									<div class="some-class discount-price-markup form-markup__item" data-radio="order-form_pickup">
+										<div class="discount-price-markup__item"><input
+											class="c-order-form__input c-input c-input_sm c-input_default "
+											id="order-form_second-name" name="second-name" type="text">
+										</div>
+										<div class="discount-price-markup__item"><input
+											class="c-order-form__input c-input c-input_sm c-input_default"
+											id="order-form_second-name" name="second-name" type="text">
+										</div>
+										<div class="discount-price-markup__item"><input
+											class="c-order-form__input c-input c-input_sm c-input_default"
+											id="order-form_second-name" name="second-name" type="text">
+										</div>
+										<div class="discount-price-markup__item"><input
+											class="c-order-form__input c-input c-input_sm c-input_default"
+											id="order-form_second-name" name="second-name" type="text">
+										</div>
+									</div>
+									<div class="some-class discount-price-markup form-markup__item" data-radio="order-form_courier">
+										<div class="discount-price-markup__item"><input
+											class="c-order-form__input c-input c-input_sm c-input_default "
+											id="order-form_second-name" name="second-name" type="text">
+										</div>
+									</div>
 								</div>
-							</fieldset>
-							<div class="some-class" data-radio="order-form_pickup">1</div>
-							<div class="some-class" data-radio="order-form_courier">2</div>
+							</div>
 							<button class="c-order-form__submit c-btn c-btn_default c-btn_lg" type="submit">Оформить
 								заказ
 							</button>

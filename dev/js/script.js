@@ -1,7 +1,7 @@
-function filter($filter) {
-  const parent = $filter.get(0);
-  const title = parent.querySelector('.filter__title');
-  const icon = parent.querySelector('.filter__icon');
+function dropdown($dropdown) {
+  const parent = $dropdown.get(0);
+  const title = parent.querySelector('.c-dropdown__title');
+  const icon = parent.querySelector('.c-dropdown__icon');
   const closedHeight = title.offsetHeight + 'px';
   const openedHeight = parent.offsetHeight + 'px';
   if ($(parent).attr('data-is-open') === 'closed') {
@@ -11,49 +11,50 @@ function filter($filter) {
     if ($(parent).attr('data-is-open') === 'closed') {
       parent.style.maxHeight = openedHeight;
       $(parent).attr('data-is-open', 'opened')
-      $(icon).addClass('filter__icon_opened')
+      $(icon).addClass('c-dropdown__icon_opened')
     } else if ($(parent).attr('data-is-open') === 'opened') {
       parent.style.maxHeight = closedHeight;
-      $(icon).removeClass('filter__icon_opened')
+      $(icon).removeClass('c-dropdown__icon_opened')
       $(parent).attr('data-is-open', 'closed')
     }
   })
 }
+function ajaxRender({$parent, targetAttribute, containerClass, activeClass, url, data}) {
+  const storage = {}
+  const $items = $parent.find('[' + targetAttribute + ']')
+  const $textContainer = $parent.find('.' + containerClass)
+  const active = activeClass
+  $items.on('click', function () {
+    const $item = $(this)
+    let text;
+    let key = $item.attr(targetAttribute);
+    $.each($items, function (k, v) {
+      $(v).removeClass(active, 200)
+    })
+    $item.addClass(active, 200)
+    if (!storage[key]) {
+      $.ajax({
+        url: url,
+        data: data,
+        success: function (response) {
+          text = response[key]['text'];
+          storage[key] = text
+          $textContainer.text(storage[key])
+        }
+      })
+    } else {
+      $textContainer.text(storage[key])
+    }
+  })
+  $parent.find('.' + active).trigger('click')
+}
 
 $(document).ready(function () {
-  $.each($('.filter'), function () {
-    filter($(this))
+  $.each($('.c-dropdown'), function () {
+    dropdown($(this))
   })
-  function ajaxRender({$parent, targetAttribute, containerClass, activeClass, url, data}) {
-    const storage = {}
-    const $items = $parent.find('[' + targetAttribute + ']')
-    const $textContainer = $parent.find(containerClass)
-    const active = activeClass
-    $items.on('click', function () {
-      const $item = $(this)
-      let text;
-      let key = $item.attr(targetAttribute);
-      console.log(key)
-      $.each($items, function (k, v) {
-        $(v).removeClass(active,200)
-      })
-      $item.addClass(active,200)
-      if (!storage[key]) {
-        $.ajax({
-          url: url,
-          data: data,
-          success: function (response) {
-            text = response[key]['text'];
-            storage[key] = text
-            $textContainer.text(storage[key])
-          }
-        })
-      } else {
-        $textContainer.text(storage[key])
-      }
-    })
-    $parent.find('.' + active).trigger('click')
-  }
+
+
   ajaxRender({
     $parent: $('.c-product-review'),
     targetAttribute: 'data-text',
@@ -66,17 +67,26 @@ $(document).ready(function () {
 })
 
 function radioHandler({$parent, targetAttribute, containerClass, activeClass}) {
-  const $items = $parent.find('input[' + targetAttribute + ']')
-  const $labels = $items.closest('label')
+  const $labels = $parent.find('input[' + targetAttribute + ']').closest('label')
   const active = activeClass
+  const $container = $parent.find('.'+containerClass)
+  const display = $container.css('display')
   $labels.on('click', function () {
     const $label = $(this)
     let key = $label.find('input[' + targetAttribute + ']').attr(targetAttribute);
     console.log(key);
-    $.each($labels, function (k, v) {
-      $(v).removeClass(active,200)
+
+    $.each($('.'+containerClass), function (k, v) {
+      if($(v).attr('data-radio') !== key){
+        $(v).css({display:'none'})
+      } else {
+        $(v).css({display:display})
+      }
     })
-    $label.addClass(active,200)
+    $.each($labels, function (k, v) {
+      $(v).removeClass(active, 200)
+    })
+    $label.addClass(active, 200)
   })
   $parent.find('.' + active).trigger('click')
 }
@@ -85,6 +95,6 @@ radioHandler({
   $parent: $('.c-order-form'),
   targetAttribute: 'data-radio',
   containerClass: 'some-class',
-  activeClass: 'c-order-radio_active'
+  activeClass: 'c-order-radio_active',
 })
 
