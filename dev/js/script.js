@@ -19,9 +19,11 @@ function dropdown($dropdown) {
     }
   })
 }
+
 function ajaxRender({$parent, targetAttribute, containerClass, activeClass, url, data}) {
   const storage = {}
   const $items = $parent.find('[' + targetAttribute + ']')
+  const containerDefaultHeight = $parent.find('.' + containerClass).attr('offsetHeight')
   const $textContainer = $parent.find('.' + containerClass)
   const active = activeClass
   $items.on('click', function () {
@@ -45,42 +47,30 @@ function ajaxRender({$parent, targetAttribute, containerClass, activeClass, url,
     } else {
       $textContainer.text(storage[key])
     }
+    if ($textContainer.attr('offsetHeight') > containerDefaultHeight) {
+      $textContainer.css({overflow: 'scroll'})
+    } else {
+      $textContainer.css({overflow: 'auto'})
+    }
   })
   $parent.find('.' + active).trigger('click')
 }
 
-$(document).ready(function () {
-  $.each($('.c-dropdown'), function () {
-    dropdown($(this))
-  })
-
-
-  ajaxRender({
-    $parent: $('.c-product-review'),
-    targetAttribute: 'data-text',
-    containerClass: 'c-product-review__text',
-    activeClass: 'c-product-review__item_active',
-    url: 'ajax/product-review.json',
-    data: {articul: 1234456734}
-  })
-
-})
-
 function radioHandler({$parent, targetAttribute, containerClass, activeClass}) {
   const $labels = $parent.find('input[' + targetAttribute + ']').closest('label')
   const active = activeClass
-  const $container = $parent.find('.'+containerClass)
+  const $container = $parent.find('.' + containerClass)
   const display = $container.css('display')
   $labels.on('click', function () {
     const $label = $(this)
     let key = $label.find('input[' + targetAttribute + ']').attr(targetAttribute);
     console.log(key);
 
-    $.each($('.'+containerClass), function (k, v) {
-      if($(v).attr('data-radio') !== key){
-        $(v).css({display:'none'})
+    $.each($('.' + containerClass), function (k, v) {
+      if ($(v).attr('data-radio') !== key) {
+        $(v).css({display: 'none'})
       } else {
-        $(v).css({display:display})
+        $(v).css({display: display})
       }
     })
     $.each($labels, function (k, v) {
@@ -91,10 +81,49 @@ function radioHandler({$parent, targetAttribute, containerClass, activeClass}) {
   $parent.find('.' + active).trigger('click')
 }
 
-radioHandler({
-  $parent: $('.c-order-form'),
-  targetAttribute: 'data-radio',
-  containerClass: 'some-class',
-  activeClass: 'c-order-radio_active',
+$(document).ready(function () {
+  function hideToggler($hidden, $button) {
+    const display = $hidden.css('display')
+    const position = $button.offset()
+    const height = $button.height()
+    const left = position.left + 'px'
+    const top = position.top + height + 30 + 'px'
+    $hidden.css({left: left, top: top})
+    if ($button.attr('data-is-visible') === 'false') {
+      $hidden.css({display: 'none'})
+    }
+    $button.on('click', function () {
+      if ($(this).attr('data-is-visible') === 'false') {
+        $hidden.css({display: display})
+        $(this).attr('data-is-visible', 'true')
+      } else if ($(this).attr('data-is-visible') === 'true') {
+        $hidden.css({display: 'none'})
+        $(this).attr('data-is-visible', 'false')
+      }
+    })
+
+  }
+
+  // hideToggler($('.js-catalog'), $('[data-is-visible]'))
+  
+  $.each($('.c-dropdown'), function () {
+    dropdown($(this))
+  })
+  ajaxRender({
+    $parent: $('.c-product-review'),
+    targetAttribute: 'data-text',
+    containerClass: 'c-product-review__text',
+    activeClass: 'c-product-review__item_active',
+    url: 'ajax/product-review.json',
+    data: {articul: 1234456734}
+  })
+  radioHandler({
+    $parent: $('.c-order-form'),
+    targetAttribute: 'data-radio',
+    containerClass: 'delivery-method',
+    activeClass: 'c-order-radio_active',
+  })
 })
+
+
 

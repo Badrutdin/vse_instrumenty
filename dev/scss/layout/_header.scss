@@ -29,8 +29,21 @@
 .c-header__link-icon{
 	margin-right: 8px;
 }
-@media (min-width: $bp-xl) {
-	.c-header{
-		position: fixed;
-	}
+.c-header__top{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+	color: #747272;
+
+	background-color: #EDF3FF;
+}
+.c-header__menu-link{
+	text-decoration: none;
+	color:inherit;
+}
+.c-header__geo{
+	text-decoration-line: underline;
+	color:inherit;
 }

@@ -4,7 +4,7 @@ body {
 	//font-size: 16px;
 	//line-height: 22px;
 	//background-color: #F8F8F8;
-	background-color: #ffcccc;
+	background-color: #F8F8F8;
 }
 
 .c-content {
@@ -270,7 +270,6 @@ body {
 	line-height: 24px;
 	color: #747272;
 	padding-top: 30px;
-	overflow: scroll;
 	height: 300px;
 }
 .c-product-review__item{
@@ -291,23 +290,22 @@ body {
 *::-webkit-scrollbar-thumb {
 	background-color: #8021d3;
 }
-.c-cart-item{
-	display: flex;
+.c-cart-element{
 	height: 62px;
-	align-items: center;
-	justify-content: flex-start;
-	padding: 5px 30px 5px 10px;
 	background-color: #FFFFFF;
+	color: #333333;
 }
-.c-cart-item_total{
+.c-cart-element__item{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100%;
+}
+.c-cart-element_total{
 	background-color: #FFF7DB;
-	.c-cart-item__title{
-		margin-right: 300px;
-	}
-
 }
 
-.c-cart-item__img{
+.c-cart-element__img{
 	width: 62px;
 	height: 100%;
 	margin-right: 28px;
@@ -315,29 +313,32 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 }
-.c-cart-item__title{
+.c-cart-element__title{
 	width: 300px;
-	margin-right: 60px;
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 20px;
-	color: #333333;
+	max-height: 2.5em;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-.c-cart-item__counter{
-	width: 80px;
+.c-cart-element__counter{
 	margin-right: 80px;
+	width: 80px;
 }
-.c-cart-item__price{
-	margin-right: 78px;
+.c-cart-element__price{
 	width: 68px;
+	margin-right: 78px;
 }
-.c-cart-item__close{
+.c-cart-element__close{
 	width: 15px;
 	height: 15px;
 }
 
 .c-cart-list{
-
 }
 .c-cart-list__item{
 	&:not(:last-child) {
@@ -346,7 +347,12 @@ body {
 }
 
 .c-cart{
-	width: 800px;
+	margin-bottom: -15px;
+	margin-top: -15px;
+}
+.c-cart__item{
+	padding-bottom: 15px;
+	padding-top: 15px;
 }
 .c-cart__title{
 	font-weight: 600;
@@ -361,7 +367,7 @@ body {
 }
 .c-cart__btn{
 	width: 352px;
-	margin: auto;
+	margin: 60px auto auto;
 }
 
 
@@ -426,3 +432,11 @@ body {
 		color:$color-primary;
 	}
 }
+.js-catalog{
+	position: absolute;
+	z-index: 100;
+}
+.hidden{
+	display: none;
+}
+

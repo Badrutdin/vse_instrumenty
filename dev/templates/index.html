@@ -9,11 +9,58 @@
 	<link href="template_styles.css" rel="stylesheet">
 </head>
 <body>
+	<div class="row ">
+		<div class="col-12 col-sm-4  col-lg-3">
+			<div class="js-catalog">
+				<div class="c-left-aside">
+					<a class="c-left-aside__link" href="#">Шины</a>
+					<a class="c-left-aside__link" href="#">Диски</a>
+					<a class="c-left-aside__link" href="#">Масла</a>
+					<a class="c-left-aside__link" href="#">Лампы</a>
+					<a class="c-left-aside__link" href="#">Аккумуляторы</a>
+					<a class="c-left-aside__link" href="#">Запчасти для ТО</a>
+					<a class="c-left-aside__link" href="#">Аккумуляторы</a>
+					<a class="c-left-aside__link" href="#">Мойки высокого давления</a>
+					<a class="c-left-aside__link" href="#">Компрессоры</a>
+					<a class="c-left-aside__link" href="#">Наборы инструментов</a>
+					<a class="c-left-aside__link" href="#">Оплетки на руль</a>
+					<a class="c-left-aside__link" href="#">Уход и очистка</a>
+				</div>
+			</div>
+		</div>
+</div>
 <header class="c-header">
+	<div class="c-header__top">
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<a href="#" class="c-header__geo">
+						<svg class="c-header__geo-icon" fill="none" height="16" viewBox="0 0 12 16" width="12"
+							 xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M6.00049 8.66675C7.10506 8.66675 8.00049 7.77132 8.00049 6.66675C8.00049 5.56218 7.10506 4.66675 6.00049 4.66675C4.89592 4.66675 4.00049 5.56218 4.00049 6.66675C4.00049 7.77132 4.89592 8.66675 6.00049 8.66675Z"
+								stroke="#747272" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33333"/>
+							<path
+								d="M6.00033 1.3335C4.58584 1.3335 3.22928 1.8954 2.22909 2.89559C1.2289 3.89579 0.666992 5.25234 0.666992 6.66683C0.666992 7.92816 0.934992 8.7535 1.66699 9.66683L6.00033 14.6668L10.3337 9.66683C11.0657 8.7535 11.3337 7.92816 11.3337 6.66683C11.3337 5.25234 10.7718 3.89579 9.77156 2.89559C8.77137 1.8954 7.41481 1.3335 6.00033 1.3335V1.3335Z"
+								stroke="#747272" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33333"/>
+						</svg>
+						Москва
+					</a>
+				</div>
+				<div class="col-6">
+					<ul class="c-header__menu header-markup">
+						<li class="header-markup__item"><a class="c-header__menu-link" href="#">О компании</a></li>
+						<li class="header-markup__item"><a class="c-header__menu-link" href="#">Доставка и оплата</a></li>
+						<li class="header-markup__item"><a class="c-header__menu-link" href="#">Отслеживание посылки</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="c-header__bottom">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-12 col-xl-3 text-center">
+				<div class="col-12 col-xl-3">
 					<a href="#">
 						<img alt="" src="images/logo.png">
 					</a>
@@ -21,7 +68,7 @@
 				<div class="col-12 col-xl-9">
 					<div class="c-header__controls header-markup">
 						<div class="header-markup__item">
-							<button class=" c-btn c-btn_default c-btn_md c-btn_square c-header__btn">
+							<button data-is-visible="false" class=" c-btn c-btn_default c-btn_md c-btn_square c-header__btn">
 								<svg class="c-btn__icon" fill="none" height="12" viewBox="0 0 18 12" width="18"
 									 xmlns="http://www.w3.org/2000/svg">
 									<path d="M9 12H0V10H9V12ZM18 7H0V5H18V7ZM18 2H9V0H18V2Z" fill="white"/>
@@ -30,12 +77,12 @@
 							</button>
 						</div>
 						<div class="header-markup__item">
-							<div class="c-icon-input">
-								<input class="c-input c-input_sm c-input_default c-header__search c-icon-input__input"
+							<div class="c-input-wrap">
+								<input class="c-input c-input_sm c-input_default c-header__search c-input-wrap__input"
 									   id="" name="" placeholder="Поиск по каталогу" type="text">
-								<div class="c-icon-input__btn">
+								<div class="c-input-wrap__btn">
 									<span class="visually-hidden">Поиск</span>
-									<svg class="c-icon-input__icon" fill="none" height="24" viewBox="0 0 24 24"
+									<svg class="c-input-wrap__icon" fill="none" height="24" viewBox="0 0 24 24"
 										 width="24"
 										 xmlns="http://www.w3.org/2000/svg">
 										<path
@@ -177,7 +224,8 @@
 												 style="background-image: url(images/2.png)"></div>
 										</div>
 										<div class="c-product__name"> RENAULT</div>
-										<div class="c-product__desc"> Standart 60А/ч 500А 12В прямая (+) (-) полярн. стандартные (Европа)...
+										<div class="c-product__desc"> Standart 60А/ч 500А 12В прямая (+) (-) полярн.
+											стандартные (Европа)...
 										</div>
 										<div class="c-product__properties"> Артикул: 1234456734</div>
 										<div class="c-product__price">
@@ -229,7 +277,8 @@
 												 style="background-image: url(images/3.png)"></div>
 										</div>
 										<div class="c-product__name"> Lavr</div>
-										<div class="c-product__desc"> Промывка инжекторной системы бензинового двигателя ML101 Euro...
+										<div class="c-product__desc"> Промывка инжекторной системы бензинового двигателя
+											ML101 Euro...
 										</div>
 										<div class="c-product__properties"> Артикул: 1234456734</div>
 										<div class="c-product__price">
@@ -394,7 +443,8 @@
 												 style="background-image: url(images/5.png)"></div>
 										</div>
 										<div class="c-product__name"> Denzel</div>
-										<div class="c-product__desc"> Моечная машина высокого давления R-165D, 2200 Вт, 165 бар...
+										<div class="c-product__desc"> Моечная машина высокого давления R-165D, 2200 Вт,
+											165 бар...
 										</div>
 										<div class="c-product__properties"> Артикул: 1234456734</div>
 										<div class="c-product__price">
@@ -656,7 +706,8 @@
 												 style="background-image: url(images/5.png)"></div>
 										</div>
 										<div class="c-product__name"> Denzel</div>
-										<div class="c-product__desc"> Моечная машина высокого давления R-165D, 2200 Вт, 165 бар...
+										<div class="c-product__desc"> Моечная машина высокого давления R-165D, 2200 Вт,
+											165 бар...
 										</div>
 										<div class="c-product__properties"> Артикул: 1234456734</div>
 										<div class="c-product__price">
