@@ -1,3 +1,14 @@
+if (!Object.entries) {
+  Object.entries = function (obj) {
+    var ownProps = Object.keys(obj),
+      i = ownProps.length,
+      resArray = new Array(i); // preallocate the Array
+    while (i--)
+      resArray[i] = [ownProps[i], obj[ownProps[i]]];
+
+    return resArray;
+  };
+}
 function dropdown($dropdown) {
   const parent = $dropdown.get(0);
   const title = parent.querySelector('.c-dropdown__title');

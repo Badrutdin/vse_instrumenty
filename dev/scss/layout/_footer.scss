@@ -1,24 +1,53 @@
-.c-footer{
+.c-footer {
 	background-color: #fff;
 	padding-top: 40px;
 	padding-bottom: 20px;
 }
-.c-bottom-menu__list{
+
+.c-bottom-menu__list {
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 18px;
 	color: #747272;
 }
 
-.c-bottom-menu__item{
+.c-bottom-menu__item {
 	margin-bottom: 20px;
 }
 
-.c-bottom-menu__link{
+.c-bottom-menu__link {
 	text-decoration: none;
 	color: inherit;
 }
 
-.c-footer__footer{
+.c-footer__footer {
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 15px;
+	color: #747272;
 	margin-top: 100px;
+}
+
+.c-phone {
+	font-family: 'Mont';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+	text-decoration-line: underline;
+	color: #8021D3;
+}
+
+.c-footer__address {
+	margin-top: 10px;
+}
+
+.c-footer__social {
+	margin-top: 20px;
+}
+
+.c-footer__link {
+	display: block;
+	color: inherit;
+	text-decoration: underline
 }

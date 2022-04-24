@@ -480,11 +480,62 @@ body {
 	}
 
 	.owl-dot.active {
-		span{
+		span {
 			background: #FED308;
 			width: 28px;
 			height: 15px;
 			border-radius: 8px;
 		}
 	}
+}
+
+.c-track-form {
+	color: #333333;
+	font-weight: 600;
+}
+
+.c-track-form__body {
+	display: flex;
+	justify-content: flex-start;
+	margin-right: -10px;
+	margin-left: -10px;
+	margin-top: 40px;
+}
+
+.c-track-form__item {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.c-track-form__input {
+	width: 400px;
+	max-width: 100%;
+}
+
+.c-track-form__btn {
+	width: 204px;
+	max-width: 100%;
+}
+
+.c-track__title {
+	margin-bottom: 30px;
+	font-size: 30px;
+	line-height: 38px;
+}
+
+.c-track__text {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.c-social {
+	display: flex;
+	align-items: center;
+	margin-right: -10px;
+	margin-left: -10px;
+}
+
+.c-social__item {
+	padding-left: 10px;
+	padding-right: 10px;
 }
