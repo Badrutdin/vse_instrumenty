@@ -41,10 +41,11 @@
   "dependencies": {
     "@chenfengyuan/datepicker": "^1.0.10",
     "bootstrap": "^5.1.3",
-    "jquery-mask-plugin": "^1.14.16",
     "jquery": "^3.6.0",
+    "jquery-mask-plugin": "^1.14.16",
     "lazysizes": "^0.6.0",
     "magnific-popup": "^1.1.0",
-    "mustache": "^4.2.0"
+    "mustache": "^4.2.0",
+    "owl.carousel": "^2.3.4"
   }
 }

@@ -81,34 +81,69 @@ function radioHandler({$parent, targetAttribute, containerClass, activeClass}) {
   $parent.find('.' + active).trigger('click')
 }
 
-$(document).ready(function () {
-  function hideToggler($hidden, $button) {
-    const display = $hidden.css('display')
-    const position = $button.offset()
-    const height = $button.height()
-    const left = position.left + 'px'
-    const top = position.top + height + 30 + 'px'
-    $hidden.css({left: left, top: top})
-    if ($button.attr('data-is-visible') === 'false') {
-      $hidden.css({display: 'none'})
-    }
-    $button.on('click', function () {
-      if ($(this).attr('data-is-visible') === 'false') {
-        $hidden.css({display: display})
-        $(this).attr('data-is-visible', 'true')
-      } else if ($(this).attr('data-is-visible') === 'true') {
-        $hidden.css({display: 'none'})
-        $(this).attr('data-is-visible', 'false')
-      }
-    })
-
+function hideToggler($hidden, $button) {
+  const display = $hidden.css('display')
+  const position = $button.offset()
+  const height = $button.height()
+  const left = position.left + 'px'
+  const top = position.top + height + 30 + 'px'
+  $hidden.css({left: left, top: top})
+  if ($button.attr('data-is-visible') === 'false') {
+    $hidden.css({display: 'none'})
   }
-
-  // hideToggler($('.js-catalog'), $('[data-is-visible]'))
-  
-  $.each($('.c-dropdown'), function () {
-    dropdown($(this))
+  $(document).on('click', function (e) {
+    if (!$(e.target).attr('data-is-visible')) {
+      $hidden.css({display: 'none'})
+      $button.attr('data-is-visible', 'false')
+    }
   })
+
+  $button.on('click', function () {
+    if ($(this).attr('data-is-visible') === 'false') {
+      $hidden.css({display: display})
+      $(this).attr('data-is-visible', 'true')
+    } else if ($(this).attr('data-is-visible') === 'true') {
+      $hidden.css({display: 'none'})
+      $(this).attr('data-is-visible', 'false')
+    }
+  })
+
+}
+
+$(document).ready(function () {
+  const $slider = $('.c-slider-container')
+  const $hidden = $('.js-catalog');
+  const $button = $('[data-is-visible]');
+  const $dropdown = $('.c-dropdown');
+
+  if ($slider.length) {
+    $slider.owlCarousel({
+      autoWidth: true,
+      dots: true,
+      responsive: {
+        640: {
+          margin: 10
+        },
+        768: {
+          margin: 20
+        },
+        1024: {
+          margin: 24
+        },
+        1366: {
+          margin: 28
+        },
+      }
+    });
+  }
+  if ($button.length) {
+    hideToggler($hidden, $button)
+  }
+  if ($dropdown.length) {
+    $.each($dropdown, function () {
+      dropdown($(this))
+    })
+  }
   ajaxRender({
     $parent: $('.c-product-review'),
     targetAttribute: 'data-text',
