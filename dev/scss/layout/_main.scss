@@ -63,7 +63,7 @@ body {
 .c-category {
 	position: relative;
 	overflow: hidden;
-
+display: block;
 	&:before {
 		content: '';
 		border-radius: 50%;
@@ -362,6 +362,12 @@ a.c-product-review__item {
 .c-cart-element__close {
 	width: 15px;
 	height: 15px;
+	padding: 0;
+	background: transparent;
+	transition: transform, .1s ease-in;
+	&:hover,&:focus{
+		transform: scale(1.5);
+	}
 }
 
 .c-cart-list {
@@ -546,6 +552,10 @@ a.c-product-review__item {
 .c-social__item {
 	padding-left: 10px;
 	padding-right: 10px;
+	transition: transform, .1s ease-in;
+	&:hover,&:focus{
+		transform: scale(1.3);
+	}
 }
 
 .c-title {
@@ -553,4 +563,15 @@ a.c-product-review__item {
 	font-size: 30px;
 	line-height: 38px;
 	color: #333333;
+}
+
+.c-popup-modal{
+	position: relative;
+	max-width: 80%;
+	height: 80vh;
+	border-radius: 25px;
+	margin: auto;
+	background: #FFFFFF no-repeat center;
+	background-size: contain;
+	padding: 20px;
 }

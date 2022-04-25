@@ -18,6 +18,9 @@
 .c-bottom-menu__link {
 	text-decoration: none;
 	color: inherit;
+	&:hover,&:focus{
+	color: $color-primary;
+}
 }
 
 .c-footer__footer {

@@ -25,6 +25,9 @@
 	text-decoration: none;
 	display: flex;
 	align-items: center;
+	&:hover,&:focus{
+		color:$color-primary;
+	}
 }
 .c-header__link-icon{
 	margin-right: 8px;

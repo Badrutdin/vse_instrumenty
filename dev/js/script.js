@@ -9,6 +9,7 @@ if (!Object.entries) {
     return resArray;
   };
 }
+
 function dropdown($dropdown) {
   const parent = $dropdown.get(0);
   const title = parent.querySelector('.c-dropdown__title');
@@ -31,13 +32,13 @@ function dropdown($dropdown) {
   })
 }
 
-function ajaxRender({$parent, targetAttribute, containerClass, activeClass, url, data}) {
+function ajaxRender({$parent, targetAttribute, containerClass, activeClass, data}) {
   const storage = {}
   const $items = $parent.find('[' + targetAttribute + ']')
-  const containerDefaultHeight = $parent.find('.' + containerClass).attr('offsetHeight')
   const $textContainer = $parent.find('.' + containerClass)
   const active = activeClass
-  $items.on('click', function () {
+  $items.on('click', function (e) {
+    e.preventDefault();
     const $item = $(this)
     let text;
     let key = $item.attr(targetAttribute);
@@ -47,7 +48,7 @@ function ajaxRender({$parent, targetAttribute, containerClass, activeClass, url,
     $item.addClass(active, 200)
     if (!storage[key]) {
       $.ajax({
-        url: url,
+        url: $(this).attr('href'),
         data: data,
         success: function (response) {
           text = response[key]['text'];
@@ -121,7 +122,19 @@ $(document).ready(function () {
   const $hidden = $('.js-catalog');
   const $button = $('[data-is-visible]');
   const $dropdown = $('.c-dropdown');
-
+  // background-image: url(images/6.png)
+  $('.popup').magnificPopup({
+    tClose: 'Закрыть',
+    callbacks: {
+      open: function () {
+        const magnificPopup = $.magnificPopup.instance;
+        const content = magnificPopup.content;
+        const triggerEl = magnificPopup.ev;
+        let bg = triggerEl.css('background-image').replace('url(', '').replace(')', '').replace(/\"/gi, "");
+        content.css({'background-image': 'url(' + bg + ')'})
+      }
+    },
+  });
   if ($slider.length) {
     $slider.owlCarousel({
       autoWidth: true,
@@ -155,7 +168,6 @@ $(document).ready(function () {
     targetAttribute: 'data-text',
     containerClass: 'c-product-review__text',
     activeClass: 'c-product-review__item_active',
-    url: 'ajax/product-review.json',
     data: {articul: 1234456734}
   })
   radioHandler({
