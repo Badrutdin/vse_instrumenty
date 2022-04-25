@@ -1,15 +1,21 @@
-.c-product{
+.c-product {
 	background: #FFFFFF;
 	border-radius: 20px;
 	padding: 10px;
 	position: relative;
 	height: 100%;
+
+	&:hover {
+		outline: 1px solid rgba($color-primary,.1);
+	}
 }
-.c-product__wrap{
+
+.c-product__wrap {
 	position: relative;
 
 }
-.c-product__name{
+
+.c-product__name {
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 20px;
@@ -17,7 +23,13 @@
 	margin-bottom: 6px;
 }
 
-.c-product__desc{
+a.c-product__desc {
+	text-decoration: none;
+	&:hover,&:focus{
+		color: #E71515;
+	}
+}
+.c-product__desc {
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 18px;
@@ -31,14 +43,15 @@
 	text-overflow: ellipsis;
 }
 
-.c-product__properties{
+.c-product__properties {
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 18px;
 	color: #A7A4A4;
 	margin-bottom: 10px;
 }
-.c-product__preview{
+
+.c-product__preview {
 	position: relative;
 	padding: 0 50px;
 	max-width: 100%;
@@ -46,15 +59,17 @@
 	height: 140px;
 	margin-bottom: 20px;
 }
-.c-product__img{
+
+.c-product__img {
 	width: 100%;
 	height: 100%;
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
+	display: block;
 }
 
-.c-product__discount-label{
+.c-product__discount-label {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -62,16 +77,18 @@
 	overflow: hidden;
 }
 
-.c-product__price{
+.c-product__price {
 	margin-bottom: 14px;
 }
 
-.c-product_detail{
+.c-product_detail {
 	padding: 30px 50px;
-	.c-product__wrap{
+
+	.c-product__wrap {
 		position: relative;
 	}
-	.c-product__preview{
+
+	.c-product__preview {
 		width: 400px;
 		border: 1px solid rgba(0, 0, 0, 0.12);
 		border-radius: 20px;
@@ -80,37 +97,38 @@
 		padding-bottom: 24px;
 	}
 
-	.c-product__name{
+	.c-product__name {
 		font-size: 20px;
 		line-height: 26px;
 		margin-bottom: 10px;
 	}
 
-	.c-product__desc{
+	.c-product__desc {
 		font-size: 26px;
 		line-height: 33px;
 		margin-bottom: 10px;
 	}
 
-	.c-product__properties{
+	.c-product__properties {
 		font-size: 16px;
 		line-height: 20px;
 		margin-bottom: 32px;
 	}
 
-	.c-product__discount-label{
+	.c-product__discount-label {
 		top: 10px;
 		left: 10px;
 	}
 
-	.c-product__price{
+	.c-product__price {
 		margin-bottom: 32px;
 	}
-	.c-product__controls{
+
+	.c-product__controls {
 		max-width: 330px;
 	}
 }
 
-.c-product-slide{
+.c-product-slide {
 	width: 280px;
 }

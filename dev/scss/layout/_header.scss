@@ -39,9 +39,15 @@
 
 	background-color: #EDF3FF;
 }
+.c-header__menu-link.active{
+	color: #E71515;
+}
 .c-header__menu-link{
 	text-decoration: none;
 	color:inherit;
+	&:hover,&:focus{
+		color:$color-primary;
+	}
 }
 .c-header__geo{
 	text-decoration-line: underline;

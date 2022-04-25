@@ -58,11 +58,6 @@ function ajaxRender({$parent, targetAttribute, containerClass, activeClass, url,
     } else {
       $textContainer.text(storage[key])
     }
-    if ($textContainer.attr('offsetHeight') > containerDefaultHeight) {
-      $textContainer.css({overflow: 'scroll'})
-    } else {
-      $textContainer.css({overflow: 'auto'})
-    }
   })
   $parent.find('.' + active).trigger('click')
 }

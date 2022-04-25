@@ -14,7 +14,10 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	transition: text-shadow .2s ease, box-shadow .2s ease;
+	transition:background, .2s ease, box-shadow .2s ease;
+	&:hover,&:focus{
+		background: #E71515;
+	}
 }
 
 .btn_disabled {
